@@ -16,10 +16,6 @@ xValues=list()
 velocityValues=list()
 accelerationValues=list()
 
-#Initial values
-time.append(0)
-xValues.append(x)
-velocityValues.append(velocity)
 
 def calculateAcceleration(index):
     return (-K*xValues[index]-damp*velocityValues[index])/mass
@@ -29,12 +25,18 @@ def calculateX(index):
     oldvelocity=velocityValues[index-1]
     newvelocity=velocityValues[index]
     return ((oldvelocity+newvelocity)/2)*dt+oldX
+
 def calculatevelocity(index):
     oldvelocity=velocityValues[index-1]
     oldA=accelerationValues[index-1]
     return oldvelocity+oldA*dt
 
+#Initial values
+time.append(0)
+xValues.append(x)
+velocityValues.append(velocity)
 accelerationValues.append(calculateAcceleration(0)) #initial value
+
 
 #Calculations 
 for i in range(1,10000):
