@@ -25,10 +25,12 @@ class Particle():
         x=(coords[0]+coords[2])/2
         y=(coords[1]+coords[3])/2
         return x,y
+    
     def refresh(self):
         i,j=self.get_coords()
         self.x=i
         self.y=j
+        
     def reset(self):
         self.x1=self.orig_x1
         self.y1=self.orig_y1
